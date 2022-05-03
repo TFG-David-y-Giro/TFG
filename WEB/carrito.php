@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <title>Inicio</title>
+    <title>Carrito</title>
 </head>
 
 <body>
 
     <div class="topnav">
-        <a class="active" href="index.php">Inicio</a>
+        <a href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
-        <a href="carrito.php">Carrito</a>
+        <a class="active" href="carrito.php">Carrito</a>
     </div>
 
     <h1>This is a Heading</h1>

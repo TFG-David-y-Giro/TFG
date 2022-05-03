@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Inicio</title>
+    <title>Productos</title>
 </head>
 
 <body>
 
     <div class="topnav">
-        <a class="active" href="index.php">Inicio</a>
-        <a href="productos.php">Productos</a>
+        <a href="index.php">Inicio</a>
+        <a class="active" href="productos.php">Productos</a>
         <a href="carrito.php">Carrito</a>
     </div>
 
