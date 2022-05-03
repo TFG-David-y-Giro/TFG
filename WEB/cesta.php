@@ -15,27 +15,49 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="funciones.js"></script>
+    <style>
+        .row {
+            align-content: center;
+            justify-content: center;
+        }
+    </style>
 </head>
+<header>
+    <div>
+        <h3 style="float: left;">
+            TFG Miguel Angel Girona y David Pato
+            <input type="select-one" autocomplete="off" tabindex="" id="ais-autocomplete-selectized" placeholder="Buscar..." style="width: 263.562px; opacity: 1; position: relative; left: 0px;" class="">
+            <button type="button" class="active">🔎</button>
+        </h3>
+    </div>
+</header>
 
 <body>
     <div class="topnav">
         <a href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
-        <a class="active" href="carrito.php">🛒</a>
-        <a class="iniciarSesion" href="iniciarSesion.php">Iniciar Sesion</a>
+        <a class="active" href="cesta.php">🛒</a>
+        <a class="derecha" href="iniciarSesion.php">Iniciar Sesion</a>
     </div>
-    <table id="tabla" class="table">
-        <thead>
-            <tr>
-                <th class='text-center'>Producto</th>
-                <th class='text-center'>Cantidad</th>
-                <th class='text-center'>Precio</th>
-                <th class='text-center'>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- <?php
-                    /*  $sql = "SELECT * FROM dbo.carritos WHERE con_eliminado=0 AND con_web=3 ORDER BY 1 DESC";
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div>
+                    <div class="mt-3 mb-3 clearfix">
+                        <h2 class="pull-left">Cesta</h2><br><br>
+                    </div>
+                    <table id="tabla" class="table">
+                        <thead>
+                            <tr>
+                                <th class='text-center'>Producto</th>
+                                <th class='text-center'>Cantidad</th>
+                                <th class='text-center'>Precio</th>
+                                <th class='text-center'>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <?php
+                                    /*  $sql = "SELECT * FROM dbo.carritos WHERE con_eliminado=0 AND con_web=3 ORDER BY 1 DESC";
             $result = (odbc_exec($cnn, $sql));
             $row = odbc_fetch_array($result); 
             while ($rs_con = odbc_fetch_array($result)) {
@@ -80,33 +102,92 @@
                 }
                 echo '</tr>';
             } */
-                    ?> -->
-            <tr>
-                <td>Producto 1</td>
-                <td>1</td>
-                <td>10€</td>
-                <td>10€</td>
-            </tr>
-            <tr>
-                <td>Producto 2</td>
-                <td>2</td>
-                <td>7,50€</td>
-                <td>15€</td>
-            </tr>
-            <tr>
-                <td>Producto 3</td>
-                <td>3</td>
-                <td>2,50€</td>
-                <td>7,50€</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <td>Total cesta</td>
-            <td></td>
-            <td></td>
-            <td>32,50€</td>
-        </tfoot>
-    </table>
+                                    ?> -->
+                            <tr>
+                                <td>a</td>
+                                <td>1</td>
+                                <td>10€</td>
+                                <td>10€</td>
+                            </tr>
+                            <tr>
+                                <td>b</td>
+                                <td>2</td>
+                                <td>7,50€</td>
+                                <td>15€</td>
+                            </tr>
+                            <tr>
+                                <td>c</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>d</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>f</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>g</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>h</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>i</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>j</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>k</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>l</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                            <tr>
+                                <td>m</td>
+                                <td>3</td>
+                                <td>2,50€</td>
+                                <td>7,50€</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td>Total cesta</td>
+                            <td></td>
+                            <td></td>
+                            <td>32,50€</td>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -115,9 +196,9 @@
 <script>
     $(document).ready(function() {
         $('#tabla').DataTable({
-            "scrollY": "400px",
+            "scrollY": "autocomplete",
             "order": [
-                [0, "desc"]
+                [0, "asc"]
             ]
         });
     });

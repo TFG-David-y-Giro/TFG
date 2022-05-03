@@ -10,13 +10,22 @@
     <link rel="stylesheet" href="styles.css">
     <script src="funciones.js"></script>
 </head>
+<header>
+    <div>
+        <h3 style="float: left;">
+            TFG Miguel Angel Girona y David Pato
+            <input type="select-one" autocomplete="off" tabindex="" id="ais-autocomplete-selectized" placeholder="Buscar..." style="width: 263.562px; opacity: 1; position: relative; left: 0px;" class="">
+            <button type="button" class="active">🔎</button>
+        </h3>
+    </div>
+</header>
 
 <body>
     <div class="topnav">
         <a class="active" href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
         <a href="cesta.php">🛒</a>
-        <a class="iniciarSesion" href="iniciarSesion.php">Iniciar Sesion</a>
+        <a class="derecha" href="iniciarSesion.php">Iniciar Sesion</a>
     </div>
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
