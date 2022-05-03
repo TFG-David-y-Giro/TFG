@@ -1,14 +1,12 @@
 WEB
 
     CLIENTE
-        Crear pagina de inicio(inicio de sesion)
-        Crear pagina de productos
-        Crear pagina de carrito
+       Crear pagina de inicio
+       Unir las paginas hechas con la base de datos de SQL
 
     ADMIN
         Crear pagina de usuarios (modificar[desbloquear en caso de bloquear cuenta], añadir, eliminar)
         Crear pagina para modificar y añadir productos
-
 
 ANDROID
 
@@ -17,6 +15,5 @@ ANDROID
         Crear pagina de productos
         Crear pagina de carrito
 
-
 SQL
-    nada
+    Crear los inserts
