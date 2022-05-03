@@ -105,19 +105,19 @@
                                     ?> -->
                             <tr>
                                 <td>Producto 1</td>
-                                <td>Este es el producto 1</td>
+                                <td>Este es el producto 1, no se que poner xd</td>
                                 <td>10€</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Producto 2</td>
-                                <td>Este es el producto 2</td>
+                                <td>Este es el producto 2, no se que poner xd</td>
                                 <td>7,50€</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Producto 3</td>
-                                <td>Este es el producto 3</td>
+                                <td>Este es el producto 3, no se que poner xd</td>
                                 <td>2,50€</td>
                                 <td></td>
                             </tr>
