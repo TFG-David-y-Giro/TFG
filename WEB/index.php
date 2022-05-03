@@ -15,7 +15,7 @@
         <a class="active" href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
         <a href="cesta.php">🛒</a>
-        <b href="iniciarSesion.php">Iniciar Sesion</b>
+        <a class="iniciarSesion" href="iniciarSesion.php">Iniciar Sesion</a>
     </div>
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>

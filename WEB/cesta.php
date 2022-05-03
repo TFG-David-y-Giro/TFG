@@ -23,6 +23,7 @@
                 <th class='text-center'>Producto</th>
                 <th class='text-center'>Cantidad</th>
                 <th class='text-center'>Precio</th>
+                <th class='text-center'>Total</th>
             </tr>
         </thead>
         <tbody>
@@ -74,23 +75,27 @@
             } */
                     ?> -->
             <tr>
-                <td>a</td>
+                <td>Producto 1</td>
                 <td>1</td>
-                <td>10</td>
+                <td>10€</td>
+                <td>10€</td>
             </tr>
             <tr>
-                <td>b</td>
+                <td>Producto 2</td>
                 <td>2</td>
-                <td>7,50</td>
+                <td>7,50€</td>
+                <td>15€</td>
             </tr>
             <tr>
-                <td>c</td>
+                <td>Producto 3</td>
                 <td>3</td>
-                <td>2,50</td>
+                <td>2,50€</td>
+                <td>7,50€</td>
             </tr>
         </tbody>
         <tfoot>
-            <td>Total</td>
+            <td>Total cesta</td>
+            <td></td>
             <td></td>
             <td>32,50€</td>
         </tfoot>
