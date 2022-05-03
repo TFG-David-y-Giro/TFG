@@ -15,6 +15,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="funciones.js"></script>
+    <style>
+        .row {
+            align-content: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <header>
     <div>
@@ -99,29 +105,23 @@
                                     ?> -->
                             <tr>
                                 <td>Producto 1</td>
-                                <td>1</td>
+                                <td>Este es el producto 1</td>
                                 <td>10€</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Producto 2</td>
-                                <td>2</td>
+                                <td>Este es el producto 2</td>
                                 <td>7,50€</td>
-                                <td>15€</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Producto 3</td>
-                                <td>3</td>
+                                <td>Este es el producto 3</td>
                                 <td>2,50€</td>
-                                <td>7,50€</td>
+                                <td></td>
                             </tr>
                         </tbody>
-                        <tfoot>
-                            <td>Total cesta</td>
-                            <td></td>
-                            <td></td>
-                            <td>32,50€</td>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -136,9 +136,9 @@
 <script>
     $(document).ready(function() {
         $('#tabla').DataTable({
-            "scrollY": "400px",
+            "scrollY": "autocomplete",
             "order": [
-                [0, "desc"]
+                [0, "asc"]
             ]
         });
     });
