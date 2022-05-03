@@ -1,5 +1,22 @@
 WEB
 
-Crear pagina de inicio
-Crear pagina de productos
-Crear pagina de carrito
+    CLIENTE
+        Crear pagina de inicio(inicio de sesion)
+        Crear pagina de productos
+        Crear pagina de carrito
+
+    ADMIN
+        Crear pagina de usuarios (modificar[desbloquear en caso de bloquear cuenta], añadir, eliminar)
+        Crear pagina para modificar y añadir productos
+
+
+ANDROID
+
+    CLIENTE
+        Crear pagina de inicio(inicio de sesion)
+        Crear pagina de productos
+        Crear pagina de carrito
+
+
+SQL
+    nada

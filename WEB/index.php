@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<!-- <?php include $_SERVER['DOCUMENT_ROOT'] . '/WEB/config/config.php'; ?> -->
 
 <head>
     <title>Inicio</title>
@@ -13,7 +14,8 @@
     <div class="topnav">
         <a class="active" href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
-        <a href="carrito.php">Carrito</a>
+        <a href="cesta.php">🛒</a>
+        <b href="iniciarSesion.php">Iniciar Sesion</b>
     </div>
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
