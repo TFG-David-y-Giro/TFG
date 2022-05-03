@@ -55,6 +55,9 @@
         <input name="contraseña" type="password" autocomplete=”OFF” placeholder="Introduce tu contraseña">
         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
         <input type="hidden" name="control" id="control" value="<?php echo $_SESSION['control']; ?>" />
+        <div>
+            <div class="g-recaptcha"  style="display: inline-block;" data-sitekey="6LcCPKYfAAAAAIdlPHr1vei8QHwLbiH8FeBFnRiM"></div>
+        </div>
         <br />
         <input type="submit" value="Enviar">
 
