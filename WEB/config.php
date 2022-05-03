@@ -7,7 +7,7 @@ if (false) {
 }
 session_start();
 ini_set("session.auto_start", true);
-header('Content-Type: text/html; charset=iso-8859-3');
+header('Content-Type: text/html; charset=utf-8');
 $idiomasDisponibles = array('es');
 $idiomaDefecto = 'es';
 $idiomaApp = isset($_SESSION['Idioma']) ? $_SESSION['Idioma'] : $idiomaDefecto;
@@ -51,5 +51,5 @@ $CONFIG = array(
     'mailEnvio' => 'miguel.girona@smartbits-es.es', //* Nota: Aquí meter vuestro correo para hacer las pruebas//
 );
 //conexion a base de datos y incluir archivo//
-$cnn = odbc_connect("DSN_smartbits_practicas", "smartbits_practicas", "Abcde123456");
+//$cnn = odbc_connect("DSN_smartbits_practicas", "smartbits_practicas", "Abcde123456");
 //include "funciones.php";

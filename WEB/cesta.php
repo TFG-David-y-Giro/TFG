@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- <?php include $_SERVER['DOCUMENT_ROOT'] . '/WEB/config/config.php'; ?> -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/TFG/WEB/config.php'; ?>
 
 <head>
     <meta charset="UTF-8">
