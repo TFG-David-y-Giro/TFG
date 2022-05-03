@@ -2,3 +2,4 @@ WEB
 
 Crear pagina de inicio
 Crear pagina de productos
+Crear pagina de carrito
