@@ -7,13 +7,5 @@ WEB
     ADMIN
         Crear pagina de usuarios (modificar[desbloquear en caso de bloquear cuenta], añadir, eliminar)
         Crear pagina para modificar y añadir productos
-
-ANDROID
-
-    CLIENTE
-        Crear pagina de inicio(inicio de sesion)
-        Crear pagina de productos
-        Crear pagina de carrito
-
 SQL
     Crear los inserts

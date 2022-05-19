@@ -45,12 +45,9 @@
         <a href="cesta.php">🛒</a>
         <a class="derecha" href="iniciarSesion.php">Iniciar Sesion</a>
     </div>
-    <?php if (!empty($message)) : ?> <p> <?= $message ?> </p>
-    <?php endif; ?>
     <h1>Iniciar sesion</h1>
 
     <form action="iniciarSesion.php" method="POST">
-        <?php $_SESSION['control'] = date('yGiz'); ?>
         <input name="usuario" type="text" placeholder="Introduce tu nombre de usuario">
         <input name="contraseña" type="password" autocomplete=”OFF” placeholder="Introduce tu contraseña">
         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
@@ -64,11 +61,6 @@
         <br />
         <a href="index.php" type="button" class="btn btn-secondary">Volver a home</a>
         <br />
-        <!-- <span><?php echo $login_err ?></span>
-        <span><?php echo $captcha_err ?></span> -->
-        <?php $control = isset($_POST['control']) ? intval($_POST['control']) : 0;
-        if ($control !== intval($_SESSION['control']))
-            exit(); ?>
     </form>
 </body>
 
