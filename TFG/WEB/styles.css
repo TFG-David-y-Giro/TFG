@@ -95,16 +95,22 @@ header div {
 }
 
 .one {
-    grid-column: 1 ;
+    grid-ºolumn: 1;
     grid-row: 1;
 }
 
 .two {
-    grid-column: 2 ;
-    grid-row: 1 ;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .three {
     grid-column: 3;
     grid-row: 1;
+}
+
+/* card */
+
+.card {
+    box-shadow: 3px 3px 10px 2px #a9a1a1;
 }
