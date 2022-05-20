@@ -92,7 +92,6 @@ header div {
     padding: 120px;
     display: grid;
     grid-template-columns: repeat(3);
-    margin-right: -230px;
 }
 
 .one {
