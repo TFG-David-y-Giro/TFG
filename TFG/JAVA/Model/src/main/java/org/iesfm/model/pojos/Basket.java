@@ -1,10 +1,15 @@
 package org.iesfm.model.pojos;
 
+import javax.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Basket {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
     private List<Item> items;
@@ -13,6 +18,9 @@ public class Basket {
         this.id = id;
         this.username = username;
         this.items = items;
+    }
+
+    public Basket() {
     }
 
     public int getId() {

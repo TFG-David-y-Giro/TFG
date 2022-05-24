@@ -1,4 +1,4 @@
-package org.iesfm.back.services;
+package org.iesfm.model.services;
 
 public class SupplierService {
 }

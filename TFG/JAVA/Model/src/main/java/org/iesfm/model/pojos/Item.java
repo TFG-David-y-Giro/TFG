@@ -1,15 +1,26 @@
 package org.iesfm.model.pojos;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
 public class Item {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private int price;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
     private Supplier supplier;
     private int quantity;
+
+    public Item() {
+    }
 
     public Item(int id, String name, int price, Category category, Supplier supplier, int quantity) {
         this.id = id;
