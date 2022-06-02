@@ -1,143 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>Inicio</title>
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      href="https://irp.cdn-website.com/7ea596da/dms3rep/multi/TFG+Favicon+for+Website.jpg"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="funciones.js"></script>
-  </head>
-  <header>
-    <div>
-      <h3 style="float: left">TFG Miguel Angel Girona y David Pato</h3>
+
+<head>
+  <title>Inicio</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="https://irp.cdn-website.com/7ea596da/dms3rep/multi/TFG+Favicon+for+Website.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="funciones.js"></script>
+</head>
+<header>
+  <div>
+    <h3 style="float: left">TFG Miguel Angel Girona y David Pato</h3>
+  </div>
+</header>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="productos.html">Productos<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cesta.html">🛒</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="iniciarSesion.html">Iniciar Sesion</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" />
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
+          🔎
+        </button>
+      </form>
     </div>
-  </header>
+  </nav>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="wrapper">
 
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="productos.html"
-              >Productos<span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cesta.html">🛒</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="iniciarSesion.html">Iniciar Sesion</a>
-          </li>
-        </ul>
-        <form class="form-inline">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Buscar..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-            🔎
-          </button>
-        </form>
-      </div>
-    </nav>
+    <!--Producto del 1 al 9-->
+    <div id="div1" name="DIVS"></div>
+    <div id="div2" name="DIVS"></div>
+    <div id="div3" name="DIVS"></div>
+    <div id="div4" name="DIVS"></div>
+    <div id="div5" name="DIVS"></div>
+    <div id="div6" name="DIVS"></div>
+    <div id="div7" name="DIVS"></div>
+    <div id="div8" name="DIVS"></div>
+    <div id="div9" name="DIVS"></div>
 
-    <div class="wrapper">
-      <div class="card one" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="/TFG/TFG/WEB/imagenes/OrdenadorDestruido1.jpg"
-          alt="Error al cargar la imagen"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Ordenador calefacción</h5>
-          <p class="card-text">
-            ¿Pasas frio cuando pierdes tiempo viendo a otras personas triunfar?
-            Este ordenador es justo lo que necesitas
-          </p>
-        </div>
-        <div class="card-body">
-          <a href="#" class="card-link">Detalles</a>
-        </div>
+
+    <!--Botones de compra-->
+    <div id="divbotones">
+      <input type="button" id="botonTotal" value="Calcular total" />
+      <input type="button" id="botonDatos" value="Datos personales" disabled="disabled" />
+      <input type="button" id="botonPago" value="Pago" disabled="disabled" />
+      <input type="button" id="botonConfirmar" value="Confirmar pedido" disabled="disabled" />
+    </div>
+
+
+    <!--zona de compra, tablas, formularios, etc.-->
+    <div id="divZonaCompra" class="divZonaCompraNo">
+
+
+      <!--Carrito de la compra-->
+      <div id="divTotal" class="divsNo">
+        <p><b>Carrito de la compra, si quiere hacer alguna modificacion aun esta a tiempo:</b></p>
+        <table id="tablaTotal"></table>
       </div>
 
-      <div class="card two" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="/TFG/TFG/WEB/imagenes/OrdenadorDestruido2.jpg"
-          alt="Error al cargar la imagen"
-          style="margin-bottom: 62px"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Ordenador antiestrés</h5>
-          <p class="card-text">
-            Perfecto si eres impulsivo y quieres reventar el monitor cuando
-            pierdes en el lol por ser malo
-          </p>
+
+      <!--Datos personales-->
+      <div id="divDatos" class="divsNo">
+        <p><b>Introduzca sus datos personales:</b></p>
+
+        <div id="divDatosPersonales0">
+          <div id="divDatosPersonales1">
+            <label>Nombre completo:</label><br />
+            <input type="text" id="nombre" value="" size="26" /><br />
+
+
+            <label>DNI:</label><br />
+            <input type="text" id="dni" value="" size="8" maxlength="9" /><br />
+
+
+            <label>Fecha de nacimiento:</label><br />
+            <select id="fechaNacimientoDia">
+              <option value=""> dia </option>
+            </select>
+            <select id="fechaNacimientoMes">
+              <option value=""> mes</option>
+              <option value="1">Enero</option>
+              <option value="2">Febrero</option>
+              <option value="3">Marzo</option>
+              <option value="4">Abril</option>
+              <option value="5">Mayo</option>
+              <option value="6">Junio</option>
+              <option value="7">Julio</option>
+              <option value="8">Agosto</option>
+              <option value="9">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+            <select id="fechaNacimientoAnio">
+              <option value=""> año </option>
+            </select><br />
+          </div>
+
+          <div id="divDatosPersonales2">
+            <label>Telefono movil:</label><br />
+            <input type="text" id="movil" value="" size="8" maxlength="9" /><br />
+
+            <label>Email:</label><br />
+            <input type="text" id="email1" value="" size="25" /><br />
+
+            <label>Repita el email:</label><br />
+            <input type="text" id="email2" value="" size="25" />
+          </div>
         </div>
-        <div class="card-body">
-          <a href="#" class="card-link">Detalles</a>
+
+
+        <div id="divDomicilio">
+          <label>Tipo de via:</label>
+          <select id="tipoDeVia">
+            <option value="Avenida">Avenida</option>
+            <option value="Calle" selected="selected">Calle</option>
+            <option value="Camino">Camino</option>
+            <option value="Carretera">Carretera</option>
+            <option value="Pasaje">Pasaje</option>
+            <option value="Plaza">Plaza</option>
+            <option value="Residencia">Residencia</option>
+            <option value="Ronda">Ronda</option>
+            <option value="Travesia">Travesia</option>
+            <option value="Urbanizacion">Urbanizacion</option>
+          </select>
+
+          <label>Nombre via:</label>
+          <input type="text" id="viaNombre" value="" size="20" /><br />
+
+          <label>Nº/km:</label>
+          <input type="text" id="viaNumero" value="" size="2" />
+
+          <label>Bloque:</label>
+          <input type="text" id="viaBloque" value="" size="2" />
+
+          <label>Escalera:</label>
+          <input type="text" id="viaEscalera" value="" size="2" />
+
+          <label>Piso:</label>
+          <input type="text" id="viaPiso" value="" size="2" /><br />
+
+
+          <label>Localidad:</label>
+          <input type="text" id="localidad" value="" size="13" />
+
+          <label>Codigo Postal:</label>
+          <input type="text" id="codigoPostal" value="" size="5" maxlength="5" />
+
+          <label>Provincia:</label>
+          <select id="provincia">
+            <option value=""> provincia</option>
+            <option value="15">A coruña</option>
+            <option value="1">Álava</option>
+            <option value="2">Albacete</option>
+            <option value="3">Alicante</option>
+            <option value="4">Almería</option>
+            <option value="33">Asturias</option>
+            <option value="5">Ávila</option>
+            <option value="6">Badajoz</option>
+            <option value="7">Baleares</option>
+            <option value="8">Barcelona</option>
+            <option value="9">Burgos</option>
+            <option value="10">Cáceres</option>
+            <option value="11">Cádiz</option>
+            <option value="39">Cantabria</option>
+            <option value="12">Castellón</option>
+            <option value="51">Ceuta</option>
+            <option value="13">Ciudad Real</option>
+            <option value="14">Córdoba</option>
+            <option value="16">Cuenca</option>
+            <option value="99">Extranjero</option>
+            <option value="17">Girona</option>
+            <option value="18">Granada</option>
+            <option value="19">Guadalajara</option>
+            <option value="20">Guipúzcoa</option>
+            <option value="21">Huelva</option>
+            <option value="22">Huesca</option>
+            <option value="23">Jaén</option>
+            <option value="26">La rioja</option>
+            <option value="35">Las palmas</option>
+            <option value="24">León</option>
+            <option value="25">Lleida</option>
+            <option value="27">Lugo</option>
+            <option value="28">Madrid</option>
+            <option value="29">Málaga</option>
+            <option value="52">Melilla</option>
+            <option value="30">Murcia</option>
+            <option value="31">Navarra</option>
+            <option value="32">Ourense</option>
+            <option value="34">Palencia</option>
+            <option value="36">Pontevedra</option>
+            <option value="37">Salamanca</option>
+            <option value="38">Santa cruz de tenerife</option>
+            <option value="40">Segovia</option>
+            <option value="41">Sevilla</option>
+            <option value="42">Soria</option>
+            <option value="43">Tarragona</option>
+            <option value="44">Teruel</option>
+            <option value="45">Toledo</option>
+            <option value="46">Valencia</option>
+            <option value="47">Valladolid</option>
+            <option value="48">Vizcaya</option>
+            <option value="49">Zamora</option>
+            <option value="50">Zaragoza</option>
+          </select>
         </div>
       </div>
 
-      <div class="card three" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="/TFG/TFG/WEB/imagenes/OrdenadorDestruido3.jpg"
-          alt="Error al cargar la imagen"
-          style="margin-bottom: 75px"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Ordenador lego</h5>
-          <p class="card-text">
-            Ideal para ti si quieres un ordenador actualizable facil de
-            desmontar
-          </p>
+
+      <!--Datos de pago-->
+      <div id="divPago" class="divsNo">
+        <p><b>Introduzca los datos de la tarjeta de credito/debito donde se cargara el cobro:</b></p>
+
+
+        <label>Titular de la tarjeta:</label><br />
+        <input type="text" id="titular" value="" size="26" /><br />
+
+
+        <div id="metodosDePago">
+          <label><span id="alertTipoDeTarjeta">Tipo de tarjeta:</span></label><br />
+          <label for="visa">
+            <input type="radio" id="visa" name="tarjetas" class="logoTarjetas" value="Visa">
+            <img src="img/pago/visa.gif"></img>
+          </label>
+
+          <label for="masterCard">
+            <input type="radio" id="masterCard" name="tarjetas" class="logoTarjetas" value="MasterCard">
+            <img src="img/pago/mastercard.gif"></img>
+          </label>
+
+          <label for="amex">
+            <input type="radio" id="amex" name="tarjetas" class="logoTarjetas" value="American Express">
+            <img src="img/pago/amex.gif"></img>
+          </label>
+
+          <label for="aurora">
+            <input type="radio" id="aurora" name="tarjetas" class="logoTarjetas" value="Aurora">
+            <img src="img/pago/aurora.gif"></img>
+          </label>
+
         </div>
-        <div class="card-body">
-          <a href="#" class="card-link">Detalles</a>
+
+
+        <div id="divNumeroTarjeta">
+          <label>Número tarjeta y CVC:</label><br />
+          <input type="text" id="numeroTarjeta" value="" size="15" maxlength="16" />
+          <input type="text" id="cvcTarjeta" value="" size="2" maxlength="3" /><br />
+
+
+          <select id="mesTarjeta">
+            <option value=""> mes </option>
+          </select>
+
+          <select id="anioTarjeta">
+            <option value=""> año </option>
+          </select>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  </div>
+  <p class="pie">Imagen de fondo propiedad de <a href="http://www.appinformatica.com/"
+      target="_black">appinformatica</a></p>
+</body>
+</div>
+</body>
+
 </html>
