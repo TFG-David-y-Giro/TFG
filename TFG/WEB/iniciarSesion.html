@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="https://irp.cdn-website.com/7ea596da/dms3rep/multi/TFG+Favicon+for+Website.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link
+      rel="icon"
+      href="https://irp.cdn-website.com/7ea596da/dms3rep/multi/TFG+Favicon+for+Website.jpg"
+    />
     <title>Iniciar sesion</title>
     <link
       rel="stylesheet"
@@ -98,25 +102,20 @@
     </nav>
     <h1>Iniciar sesion</h1>
 
-    <form action="iniciarSesion.php" method="POST">
+    <form action="iniciarSesion.html" method="POST">
       <input
         name="usuario"
         type="text"
         placeholder="Introduce tu nombre de usuario"
       />
       <input
-        name="contraseña"
-        type="password"
-        autocomplete="”OFF”"
-        placeholder="Introduce tu contraseña"
+      name="contraseña"
+      type="password"
+      autocomplete="OFF"
+      placeholder="Introduce tu contraseña"
       />
       <input type="hidden" name="recaptcha_response" id="recaptchaResponse" />
-      <input
-        type="hidden"
-        name="control"
-        id="control"
-        value="<?php echo $_SESSION['control']; ?>"
-      />
+      <input type="hidden" name="control" id="control" />
       <div>
         <div
           class="g-recaptcha"
@@ -128,7 +127,7 @@
       <input type="submit" value="Enviar" />
 
       <br />
-      <a href="index.php" type="button" class="btn btn-secondary"
+      <a href="index.html" type="button" class="btn btn-secondary"
         >Volver a home</a
       >
       <br />
