@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 WEB
     Pagina de inicio
     Pagina de productos
@@ -6,3 +7,7 @@ WEB
 
 SQL
     Crear los inserts (para tener en cualquier sitio donde se arranque la api, suficientes datos para que funcionen)
+=======
+WEB
+    Unir con SQL
+>>>>>>> aee4f49db3dc8485964822d6d1aa7f68cf999834
