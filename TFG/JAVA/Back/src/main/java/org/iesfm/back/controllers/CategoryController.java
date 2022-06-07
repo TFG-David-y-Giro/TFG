@@ -35,4 +35,13 @@ public class CategoryController {
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
+
+    @GetMapping("/category/{category_id}")
+    public Category getCategory(@PathVariable int categoryId) {
+        if (categoryService.getCategory(categoryId) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
+        } else {
+            return categoryService.getCategory(categoryId);
+        }
+    }
 }
