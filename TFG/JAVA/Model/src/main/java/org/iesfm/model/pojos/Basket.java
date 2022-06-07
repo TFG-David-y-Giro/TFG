@@ -5,19 +5,20 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-@Entity(name ="cart")
+@Entity
+@Table(name ="cart")
 public class Basket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
-    private List<Item> items;
+    private int price;
 
-    public Basket(int id, String username, List<Item> items) {
+    public Basket(int id, String username, int price) {
         this.id = id;
         this.username = username;
-        this.items = items;
+        this.price = price;
     }
 
     public Basket() {
@@ -39,12 +40,12 @@ public class Basket {
         this.username = username;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public int getPrice() {
+        return price;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override
@@ -52,12 +53,12 @@ public class Basket {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Basket basket = (Basket) o;
-        return id == basket.id && Objects.equals(username, basket.username) && Objects.equals(items, basket.items);
+        return getId() == basket.getId() && getPrice() == basket.getPrice() && getUsername().equals(basket.getUsername());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, items);
+        return Objects.hash(getId(), getUsername(), getPrice());
     }
 
     @Override
@@ -65,7 +66,7 @@ public class Basket {
         return "Basket{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", items=" + items +
+                ", price=" + price +
                 '}';
     }
 }

@@ -1,31 +1,27 @@
 package org.iesfm.model.pojos;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username, name, surname, mail, password;
-    private boolean admin;
 
     public User() {
     }
 
-    public User(int id, String username, String name, String surname, String mail, String password, boolean admin) {
+    public User(int id, String username, String name, String surname, String mail, String password) {
         this.id = id;
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.mail = mail;
         this.password = password;
-        this.admin = admin;
     }
 
     public int getId() {
@@ -76,25 +72,18 @@ public class User {
         this.password = password;
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && admin == user.admin && Objects.equals(username, user.username) && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(mail, user.mail) && Objects.equals(password, user.password);
+        return getId() == user.getId() && getUsername().equals(user.getUsername()) && getName().equals(user.getName()) && Objects.equals(getSurname(), user.getSurname()) && getMail().equals(user.getMail()) && getPassword().equals(user.getPassword());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, name, surname, mail, password, admin);
+        return Objects.hash(getId(), getUsername(), getName(), getSurname(), getMail(), getPassword());
     }
 
     @Override
@@ -106,7 +95,6 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", mail='" + mail + '\'' +
                 ", password='" + password + '\'' +
-                ", admin=" + admin +
                 '}';
     }
 }
