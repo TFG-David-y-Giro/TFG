@@ -1,8 +1,2 @@
 WEB
-    Pagina de inicio
-    Pagina de productos
-    Pagina de carrito
     Unir con SQL
-
-SQL
-    Crear los inserts (para tener en cualquier sitio donde se arranque la api, suficientes datos para que funcionen)
