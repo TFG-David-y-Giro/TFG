@@ -1,34 +1,34 @@
 CREATE DATABASE IF NOT EXISTS PcShopMD;
 USE PcShopMD;
 CREATE TABLE IF NOT EXISTS user (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	user VARCHAR (100) UNIQUE,
-	name VARCHAR (100) NOT NULL,
-	surname VARCHAR (100) NOT NULL,
-	mail VARCHAR (100) NOT NULL,
-	password VARCHAR (100) NOT NULL
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user VARCHAR (100) UNIQUE,
+  name VARCHAR (100) NOT NULL,
+  surname VARCHAR (100) NOT NULL,
+  mail VARCHAR (100) NOT NULL,
+  password VARCHAR (100) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS supplier (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR (100) NOT NULL,
-	country VARCHAR (100) NOT NULL
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (100) NOT NULL,
+  country VARCHAR (100) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS item (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR (100) NOT NULL,
-	price INT NOT NULL,
-	category VARCHAR (100) NOT NULL,
-	supplier VARCHAR (100) NOT NULL,
-	cuantity INT NOT NULL
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (100) NOT NULL,
+  price INT NOT NULL,
+  category VARCHAR (100) NOT NULL,
+  supplier VARCHAR (100) NOT NULL,
+  quantity INT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS cart (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	user VARCHAR (100) NOT NULL,
-	price INT NOT NULL
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user VARCHAR (100) NOT NULL,
+  price INT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS category (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR (100) NOT NULL
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (100) NOT NULL
 );
 INSERT INTO tfg.category (name)
 VALUES ('Ordenadores sobremesa');
@@ -72,23 +72,23 @@ VALUES ('SerLag', 499);
 INSERT INTO tfg.cart (user, price)
 VALUES ('MikSan', 399);
 
-INSERT INTO tfg.item (name, price, category, supplier, cuantity)
+INSERT INTO tfg.item (name, price, category, supplier, quantity)
 VALUES ('MSI i5', 499, 'Ordenadores portatiles', 'PcComponentes', 1);
 
-INSERT INTO tfg.item (name, price, category, supplier, cuantity)
+INSERT INTO tfg.item (name, price, category, supplier, quantity)
 VALUES ('Hummer i3', 399, 'Ordenadores sobremesa', 'PcBox', 1);
 
-INSERT INTO tfg.item (name, price, category, supplier, cuantity)
+INSERT INTO tfg.item (name, price, category, supplier, quantity)
 VALUES ('RTX 3090', 2000, 'Tarjetas graficas', 'Nvidia', 1);
 
-INSERT INTO tfg.item (name, price, category, supplier, cuantity)
+INSERT INTO tfg.item (name, price, category, supplier, quantity)
 VALUES ('RTX 3080', 1500, 'Tarjetas graficas', 'Nvidia', 1);
 
 INSERT INTO tfg.supplier (name, country)
-VALUES ('PcComponentes', 'España');
+VALUES ('PcComponentes', 'EspaÃ±a');
 
 INSERT INTO tfg.supplier (name, country)
-VALUES ('PcBox', 'España');
+VALUES ('PcBox', 'EspaÃ±a');
 
 INSERT INTO tfg.supplier (name, country)
 VALUES ('Nvidia', 'Estados Unidos');
