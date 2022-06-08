@@ -13,18 +13,24 @@ public class Item {
     private int id;
     private String name;
     private int price;
-    @ManyToOne
-    @JoinColumn(name = "category_name")
-    private Category category;
-    @ManyToOne
-    @JoinColumn(name = "supplier_name")
-    private Supplier supplier;
+    
+    @JoinColumn(name = "category_name",
+            referencedColumnName = "name",
+            insertable = false,
+            updatable = false)
+    private String category;
+
+    @JoinColumn(name = "supplier_name",
+            referencedColumnName = "name",
+            insertable = false,
+            updatable = false)
+    private String supplier;
     private int quantity;
 
     public Item() {
     }
 
-    public Item(int id, String name, int price, Category category, Supplier supplier, int quantity) {
+    public Item(int id, String name, int price, String category, String supplier, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -57,19 +63,19 @@ public class Item {
         this.price = price;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
-    public Supplier getSupplier() {
+    public String getSupplier() {
         return supplier;
     }
 
-    public void setSupplier(Supplier supplier) {
+    public void setSupplier(String supplier) {
         this.supplier = supplier;
     }
 
@@ -86,12 +92,12 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return id == item.id && price == item.price && quantity == item.quantity && Objects.equals(name, item.name) && Objects.equals(category, item.category) && Objects.equals(supplier, item.supplier);
+        return getId() == item.getId() && getPrice() == item.getPrice() && getQuantity() == item.getQuantity() && getName().equals(item.getName()) && getCategory().equals(item.getCategory()) && getSupplier().equals(item.getSupplier());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, category, supplier, quantity);
+        return Objects.hash(getId(), getName(), getPrice(), getCategory(), getSupplier(), getQuantity());
     }
 
     @Override
@@ -100,8 +106,8 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", category=" + category +
-                ", supplier=" + supplier +
+                ", category='" + category + '\'' +
+                ", supplier='" + supplier + '\'' +
                 ", quantity=" + quantity +
                 '}';
     }
