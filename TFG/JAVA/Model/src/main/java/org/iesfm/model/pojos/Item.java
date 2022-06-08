@@ -5,6 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "item")
+
 public class Item {
 
     @Id
@@ -13,10 +14,10 @@ public class Item {
     private String name;
     private int price;
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_name")
     private Category category;
     @ManyToOne
-    @JoinColumn(name = "supplier_id")
+    @JoinColumn(name = "supplier_name")
     private Supplier supplier;
     private int quantity;
 

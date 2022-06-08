@@ -1,8 +1,6 @@
 package org.iesfm.model.pojos;
 
 import javax.persistence.*;
-
-import java.util.List;
 import java.util.Objects;
 
 @Entity

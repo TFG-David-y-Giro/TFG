@@ -5,6 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "category")
+
 public class Category {
 
     @Id
