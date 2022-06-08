@@ -1,7 +1,41 @@
 package org.iesfm.model.services;
 
+import org.iesfm.model.pojos.Supplier;
+import org.iesfm.model.repositories.SupplierRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class SupplierService {
 
+    @Autowired
+    private SupplierRepository supplierRepository;
 
+    public SupplierService(SupplierRepository supplierRepository) {
+        this.supplierRepository = supplierRepository;
+    }
+
+    public List<Supplier> getSuppliers() {
+        return supplierRepository.findAll();
+    }
+
+    public Supplier getSupplier(int id) {
+        if (supplierRepository.existsById(id)) {
+            return null;
+        } else {
+            return supplierRepository.getById(id);
+        }
+    }
+
+    public Supplier createSupplier(Supplier newSupplier) {
+        if (supplierRepository.existsById(newSupplier.getId())) {
+            return null;
+        } else {
+            supplierRepository.save(newSupplier);
+            return newSupplier;
+        }
+    }
 
 }
