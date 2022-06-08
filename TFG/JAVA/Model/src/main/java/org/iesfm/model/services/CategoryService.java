@@ -5,6 +5,7 @@ import org.iesfm.model.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -36,5 +37,20 @@ public class CategoryService {
             categoryRepository.save(category);
             return category;
         }
+    }
+
+    public Category putCategory(int id, Category updatedCategory) {
+        if (!categoryRepository.existsById(id)) {
+            return null;
+        } else {
+            categoryRepository.delete(categoryRepository.findById(id).get());
+            updatedCategory.setId(id);
+            categoryRepository.save(updatedCategory);
+            return updatedCategory;
+        }
+    }
+
+    public void deleteCategory(int id) {
+        categoryRepository.delete(categoryRepository.findById(id).get());
     }
 }

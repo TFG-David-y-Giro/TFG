@@ -14,13 +14,13 @@ public class Item {
     private String name;
     private int price;
 
-    @JoinColumn(name = "category_name",
+    @JoinColumn(name = "category",
             referencedColumnName = "name",
             insertable = false,
             updatable = false)
     private String category;
 
-    @JoinColumn(name = "supplier_name",
+    @JoinColumn(name = "supplier",
             referencedColumnName = "name",
             insertable = false,
             updatable = false)

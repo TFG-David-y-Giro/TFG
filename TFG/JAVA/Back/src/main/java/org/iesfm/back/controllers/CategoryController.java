@@ -44,4 +44,23 @@ public class CategoryController {
             return categoryService.getCategory(category_id);
         }
     }
+
+    @PutMapping("/category/{id}")
+    public Category putCategory(@PathVariable int id, @RequestBody Category updatedCategory) {
+        if (categoryService.getCategory(id) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
+        } else {
+            categoryService.putCategory(id, updatedCategory);
+            return updatedCategory;
+        }
+    }
+
+    @DeleteMapping("/category/{id}")
+    public void deleteCategory(@PathVariable int id) {
+        if (categoryService.getCategory(id) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
+        } else {
+            categoryService.deleteCategory(id);
+        }
+    }
 }

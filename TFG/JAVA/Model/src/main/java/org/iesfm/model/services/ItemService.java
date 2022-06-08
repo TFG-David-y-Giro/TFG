@@ -3,7 +3,6 @@ package org.iesfm.model.services;
 
 import org.iesfm.model.pojos.Category;
 import org.iesfm.model.pojos.Item;
-import org.iesfm.model.pojos.Supplier;
 import org.iesfm.model.repositories.CategoryRepository;
 import org.iesfm.model.repositories.ItemRepository;
 import org.iesfm.model.repositories.SupplierRepository;
@@ -29,7 +28,7 @@ public class ItemService {
     public Item postItem(Item newItem) {
         if (itemRepository.existsById(newItem.getId())) {
             return null;
-        } else if (categoryRepository.findByName(newItem.getCategory()) == null){
+        } else if (categoryRepository.findByName(newItem.getCategory()) == null) {
             Category category = new Category(0, newItem.getCategory());
             categoryRepository.save(category);
             itemRepository.save(newItem);
@@ -66,13 +65,8 @@ public class ItemService {
         }
     }
 
-    public Item deleteItem(int id) {
-        if (!itemRepository.existsById(id)) {
-            return null;
-        } else {
-            itemRepository.delete(itemRepository.findById(id).get());
-            return getItem(id);
-        }
+    public void deleteItem(int id) {
+        itemRepository.delete(itemRepository.findById(id).get());
     }
 
 }
