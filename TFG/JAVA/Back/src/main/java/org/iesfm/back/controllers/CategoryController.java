@@ -36,12 +36,12 @@ public class CategoryController {
         return categoryService.getAllCategories();
     }
 
-    @GetMapping("/category/{category_id}")
-    public Category getCategory(@PathVariable int categoryId) {
-        if (categoryService.getCategory(categoryId) == null) {
+    @GetMapping("/category/{id}")
+    public Category getCategory(@PathVariable int category_id) {
+        if (categoryService.getCategory(category_id) == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
         } else {
-            return categoryService.getCategory(categoryId);
+            return categoryService.getCategory(category_id);
         }
     }
 }

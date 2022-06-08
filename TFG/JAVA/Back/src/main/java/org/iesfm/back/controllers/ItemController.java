@@ -26,9 +26,13 @@ public class ItemController {
         }
     }
 
-    @GetMapping("/item/{item_id}/")
-    public Item getItem(@PathVariable Integer id) {
-        return itemService.getItem(id);
+    @GetMapping("/item/{item_id}")
+    public Item getItem(@PathVariable int id) {
+        if (itemService.getItem(id) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
+        } else {
+            return itemService.getItem(id);
+        }
     }
 
     @GetMapping("/item")
@@ -36,14 +40,19 @@ public class ItemController {
         return itemService.getItems();
     }
 
-    @PutMapping("/item/{item_id}/")
-    public Item putItem(@PathVariable Integer id, @RequestBody Item itemUpdated) {
+    @PutMapping("/item/{id}")
+    public Item putItem(@PathVariable int id, @RequestBody Item itemUpdated) {
         return itemService.putItem(id, itemUpdated);
     }
 
-    @DeleteMapping("/item/{item_id}/")
-    public Item deleteItem(@PathVariable Integer id) {
-        return itemService.deleteItem(id);
+    @DeleteMapping("/item/{id}")
+    public Item deleteItem(@PathVariable int id) {
+        if (itemService.getItem(id) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe");
+        } else {
+            itemService.deleteItem(id);
+            return itemService.getItem(id);
+        }
     }
 
 }

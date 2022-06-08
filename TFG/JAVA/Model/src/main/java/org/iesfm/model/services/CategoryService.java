@@ -19,7 +19,7 @@ public class CategoryService {
 
     public Category getCategory(int id) {
         if (categoryRepository.existsById(id)) {
-            return categoryRepository.getById(id);
+            return categoryRepository.findById(id).get();
         } else {
             return null;
         }

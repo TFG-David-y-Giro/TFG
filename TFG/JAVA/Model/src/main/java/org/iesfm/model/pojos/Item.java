@@ -13,7 +13,7 @@ public class Item {
     private int id;
     private String name;
     private int price;
-    
+
     @JoinColumn(name = "category_name",
             referencedColumnName = "name",
             insertable = false,

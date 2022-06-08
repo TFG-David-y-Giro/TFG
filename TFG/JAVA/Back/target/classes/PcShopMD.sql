@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS user (
   surname VARCHAR (100) NOT NULL,
   mail VARCHAR (100) NOT NULL,
   password VARCHAR (100) NOT NULL,
-  INDEX (id)
+  INDEX (id),
+  ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO PcShopMD.user (username, name, surname, mail, password)
@@ -26,7 +27,8 @@ CREATE TABLE IF NOT EXISTS category (
   id INT AUTO_INCREMENT,
   name VARCHAR (100) UNIQUE,
   PRIMARY KEY (id, name),
-  INDEX (id)
+  INDEX (id),
+  ON UPDATE CASCADE ON DELETE CASCADE
 );
 INSERT INTO PcShopMD.category (name)
 VALUES ('Ordenadores sobremesa');
@@ -62,7 +64,8 @@ CREATE TABLE IF NOT EXISTS supplier (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR (100) UNIQUE,
   country VARCHAR (100) NOT NULL,
-  INDEX (id)
+  INDEX (id),
+  ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO PcShopMD.supplier (name, country)
