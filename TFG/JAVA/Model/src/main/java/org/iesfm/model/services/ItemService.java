@@ -58,10 +58,13 @@ public class ItemService {
             return null;
         } else {
             Item item = getItem(id);
-            itemRepository.delete(item);
-            itemUpdated.setId(id);
-            itemRepository.save(itemUpdated);
-            return itemUpdated;
+            item.setName(itemUpdated.getName());
+            item.setCategory(itemUpdated.getCategory());
+            item.setSupplier(itemUpdated.getSupplier());
+            item.setPrice(itemUpdated.getPrice());
+            item.setQuantity(itemUpdated.getQuantity());
+            itemRepository.save(item);
+            return item;
         }
     }
 

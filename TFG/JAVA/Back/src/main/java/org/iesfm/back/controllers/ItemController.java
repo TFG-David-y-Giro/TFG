@@ -26,13 +26,9 @@ public class ItemController {
         }
     }
 
-    @GetMapping("/item/{item_id}")
+    @GetMapping("/item/{id}")
     public Item getItem(@PathVariable int id) {
-        if (itemService.getItem(id) == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
-        } else {
             return itemService.getItem(id);
-        }
     }
 
     @GetMapping("/item")

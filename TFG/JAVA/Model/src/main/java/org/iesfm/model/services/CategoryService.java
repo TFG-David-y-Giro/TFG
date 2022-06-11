@@ -42,10 +42,11 @@ public class CategoryService {
         if (!categoryRepository.existsById(id)) {
             return null;
         } else {
-            categoryRepository.delete(categoryRepository.findById(id).get());
-            updatedCategory.setId(id);
-            categoryRepository.save(updatedCategory);
-            return updatedCategory;
+            Category category = categoryRepository.findById(id).get();
+            category.setId(id);
+            category.setName(updatedCategory.getName());
+            categoryRepository.save(category);
+            return category;
         }
     }
 

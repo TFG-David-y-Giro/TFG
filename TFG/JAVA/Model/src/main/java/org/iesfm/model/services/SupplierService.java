@@ -22,10 +22,10 @@ public class SupplierService {
     }
 
     public Supplier getSupplier(int id) {
-        if (supplierRepository.existsById(id)) {
+        if (!supplierRepository.existsById(id)) {
             return null;
         } else {
-            return supplierRepository.getById(id);
+            return supplierRepository.findById(id).get();
         }
     }
 
@@ -36,6 +36,21 @@ public class SupplierService {
             supplierRepository.save(newSupplier);
             return newSupplier;
         }
+    }
+
+    public Supplier putSupplier(int id, Supplier updatedSupplier) {
+        if (!supplierRepository.existsById(id)) {
+            return null;
+        } else {
+            Supplier existingSupplier = supplierRepository.findById(id).get();
+            existingSupplier.setName(updatedSupplier.getName());
+            existingSupplier.setCountry(updatedSupplier.getCountry());
+            supplierRepository.save(existingSupplier);
+            return existingSupplier;
+        }
+    }
+    public void deleteSupplier(int id) {
+        supplierRepository.deleteById(id);
     }
 
 }

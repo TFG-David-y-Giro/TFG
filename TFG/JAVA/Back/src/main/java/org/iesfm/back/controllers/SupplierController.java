@@ -35,12 +35,26 @@ public class SupplierController {
         return supplierService.getSuppliers();
     }
 
-    @GetMapping("/supplier/{supplier_id}")
+    @GetMapping("/supplier/{id}")
     public Supplier getSupplier(@PathVariable int id) {
-        if (supplierService.getSupplier(id) == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
-        } else {
             return supplierService.getSupplier(id);
+    }
+
+    @PutMapping("/supplier/{id}")
+    public Supplier putSupplier(@PathVariable int id, @RequestBody Supplier updatedSupplier) {
+        if (supplierService.getSupplier(id) == null) {
+            return null;
+        } else {
+            supplierService.putSupplier(id, updatedSupplier);
+            return updatedSupplier;
+        }
+    }
+    @DeleteMapping("/supplier/{id}")
+    public void deleteSupplier(@PathVariable int id) {
+        if (supplierService.getSupplier(id) == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe");
+        } else {
+            deleteSupplier(id);
         }
     }
 }

@@ -25,16 +25,35 @@ public class UserService {
         if (!userRepository.existsById(id)) {
             return null;
         } else {
-            return  userRepository.getById(id);
+            return userRepository.findById(id).get();
         }
     }
 
     public User createUser(User newUser) {
         if (!userRepository.existsById(newUser.getId())) {
-            return null;
-        } else {
             userRepository.save(newUser);
             return newUser;
+        } else {
+            return null;
         }
+    }
+
+    public User updateUser(int id, User newUser) {
+        if (userRepository.existsById(newUser.getId())) {
+            return null;
+        } else {
+            User user = userRepository.findById(id).get();
+            user.setName(newUser.getName());
+            user.setMail(newUser.getMail());
+            user.setUsername(newUser.getUsername());
+            user.setPassword(newUser.getPassword());
+            user.setSurname(newUser.getSurname());
+            userRepository.save(user);
+            return user;
+        }
+    }
+
+    public void deleteUser(int id) {
+        userRepository.deleteById(id);
     }
 }

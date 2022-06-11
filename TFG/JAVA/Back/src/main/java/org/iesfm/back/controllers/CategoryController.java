@@ -37,12 +37,8 @@ public class CategoryController {
     }
 
     @GetMapping("/category/{id}")
-    public Category getCategory(@PathVariable int category_id) {
-        if (categoryService.getCategory(category_id) == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado");
-        } else {
-            return categoryService.getCategory(category_id);
-        }
+    public Category getCategory(@PathVariable int id) {
+            return categoryService.getCategory(id);
     }
 
     @PutMapping("/category/{id}")
