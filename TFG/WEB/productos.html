@@ -10,7 +10,7 @@
 
     <!--lee codigo css-->
     <link type="text/css" href="style.css" rel="stylesheet" media="screen" />
-    <link type="text/css" href="styles.css" rel="stylesheet" media="screen" />
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -64,12 +64,6 @@
             <div id="div2" name="DIVS"></div>
             <div id="div3" name="DIVS"></div>
             <div id="div4" name="DIVS"></div>
-            <div id="div5" name="DIVS"></div>
-            <div id="div6" name="DIVS"></div>
-            <div id="div7" name="DIVS"></div>
-            <div id="div8" name="DIVS"></div>
-            <div id="div9" name="DIVS"></div>
-
 
             <!--Botones de compra-->
             <div id="divbotones">
@@ -140,8 +134,9 @@
                             <input type="text" id="email2" value="" size="25" />
                         </div>
                     </div>
-
-
+                    <br>
+                    <br>
+                    <br>
                     <div id="divDomicilio">
                         <label>Tipo de via:</label>
                         <select id="tipoDeVia">
@@ -178,7 +173,7 @@
 
                         <label>Codigo Postal:</label>
                         <input type="text" id="codigoPostal" value="" size="5" maxlength="5" />  
-
+                        <br>
                         <label>Provincia:</label>
                         <select id="provincia">
                             <option value="">          provincia</option>
@@ -261,16 +256,6 @@
                             <img src="img/pago/mastercard.gif"></img>
                         </label>
 
-                        <label for="amex">
-                            <input type="radio" id="amex" name="tarjetas" class="logoTarjetas" value="American Express">
-                            <img src="img/pago/amex.gif"></img>
-                        </label>
-
-                        <label for="aurora">
-                            <input type="radio" id="aurora" name="tarjetas" class="logoTarjetas" value="Aurora">
-                            <img src="img/pago/aurora.gif"></img>
-                        </label>
-
                     </div>
 
 
@@ -292,8 +277,14 @@
             </div>
         </div>
     </div>
-    <!-- <p class="pie">Imagen de fondo propiedad de <a href="http://www.appinformatica.com/"
-            target="_black">appinformatica</a></p> -->
 </body>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">© 2022 DbShopMD</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Cookies</a></li>
+    <li class="list-inline-item"><a href="#">Terminos de uso</a></li>
+    <li class="list-inline-item"><a href="#">Soporte</a></li>
+  </ul>
+</footer>
 
 </html>

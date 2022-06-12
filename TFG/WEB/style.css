@@ -234,7 +234,7 @@ div.divZonaCompraNo {
 }
 
 #divPago {
-    height: 150px;
+    height: 225px;
     padding-left: 10px;
     background: #378582;
 }
@@ -256,13 +256,14 @@ div.divZonaCompraNo {
 #divDatosPersonales2 {
     position: relative;
     top: -130px;
-    left: 260px;
+    left: 340px;
     width: 200px;
     height: 130px;
 }
 
 #divDomicilio {
     padding: 0px 0px 0px 10px;
+
 }
 
 
@@ -314,12 +315,3 @@ input.logoTarjetas {
 }
 
 
-
-/*Pie de pagina	*/
-p.pie {
-    text-align: center;
-}
-
-a:link {
-    color: white;
-}
