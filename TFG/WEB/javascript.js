@@ -1,15 +1,13 @@
 ﻿//	Hacer tienda online de informatica usando: HTML, CSS, JS
-//	En el codigo javascript hay que hacer la base de datos de los productos con un vector por ejemplo...
-
-
+//	En el codigo javascript hay que hacer la base de datos de los productos con un vector 
 
 
 //BASE DE DATOS
-var productos = ["Antivirus", "Grafica", "Disco duro", "Ordenador", "Bolso portatil", "Portatil", "Memoria RAM", "Router Linux", "Sintonizadora TV"];
-var imgGrandes = ["img/productos/1.jpg", "img/productos/2.jpg", "img/productos/3.jpg", "img/productos/4.jpg", "img/productos/5.jpg", "img/productos/6.jpg", "img/productos/7.jpg", "img/productos/8.jpg", "img/productos/9.jpg"];
-var imgPeque = ["img/productos/1m.jpg", "img/productos/2m.jpg", "img/productos/3m.jpg", "img/productos/4m.jpg", "img/productos/5m.jpg", "img/productos/6m.jpg", "img/productos/7m.jpg", "img/productos/8m.jpg", "img/productos/9m.jpg"];
-var precios = [33, 169, 36, 360, 11, 540, 21, 66, 25];
-var stock = [5, 2, 8, 3, 10, 4, 3, 1, 2];
+var productos = ["MSI i5 ", "Hummer i3", "RTX 3090", "RTX 3080"];
+var imgGrandes = ["imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg"];
+var imgPeque = ["imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.jpg"];
+var precios = [499, 399, 2000, 1500];
+var stock = [1, 1, 1, 1];
 var precioTransporte = [6, 12, 20, "gratis"];
 var IVA = 0.18;
 var uniUser;
