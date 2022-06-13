@@ -55,7 +55,7 @@ public class ItemController {
     @GetMapping(value ="/item", params = "supplier")
     public List<Item> getItemsBySupplier(@RequestParam(value = "supplier") String supplier) {
         if (!itemService.getSupplierNames().contains(supplier)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrada esa categoria");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontrado ese proveedor");
         } else {
             return itemService.getItemsBySupplier(supplier);
         }

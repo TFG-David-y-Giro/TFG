@@ -73,8 +73,13 @@ public class ItemService {
     }
 
     public List<Item> getItemsBySupplier(String supplier) {
+        if (getItemsBySupplier(supplier).contains(supplier)) {
             return itemRepository.getItemsBySupplier(supplier);
+        } else {
+            return null;
+        }
     }
+
     public List<Item> getItemsByWord(String word) {
         return itemRepository.getItemsByWord(word);
     }

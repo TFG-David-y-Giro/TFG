@@ -39,6 +39,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/user/usernames")
+    public List<String> getUsernames() {return userService.getUsernames();}
+
+    @GetMapping("/user/mails")
+    public List<String> getMails() {return userService.getMails();}
+
     @GetMapping("/user/{id}")
     public User getUser(@PathVariable("id") int id) {
         return userService.getUser(id);
