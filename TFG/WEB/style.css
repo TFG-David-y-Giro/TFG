@@ -85,10 +85,18 @@ div.menuSi {
 }
 
 /*Divs para colocar cada producto en su sitio*/
-#div1 {
+#div0 {
     position: absolute;
     top: 38px;
     left: 12px;
+    width: 221px;
+    height: 217px;
+}
+
+#div1 {
+    position: absolute;
+    top: 38px;
+    left: 246px;
     width: 221px;
     height: 217px;
 }
@@ -96,15 +104,15 @@ div.menuSi {
 #div2 {
     position: absolute;
     top: 38px;
-    left: 246px;
+    left: 480px;
     width: 221px;
     height: 217px;
 }
 
 #div3 {
     position: absolute;
-    top: 38px;
-    left: 480px;
+    top: 271px;
+    left: 12px;
     width: 221px;
     height: 217px;
 }
@@ -112,7 +120,7 @@ div.menuSi {
 #div4 {
     position: absolute;
     top: 271px;
-    left: 12px;
+    left: 246px;
     width: 221px;
     height: 217px;
 }
@@ -120,20 +128,12 @@ div.menuSi {
 #div5 {
     position: absolute;
     top: 271px;
-    left: 246px;
-    width: 221px;
-    height: 217px;
-}
-
-#div6 {
-    position: absolute;
-    top: 271px;
     left: 480px;
     width: 221px;
     height: 217px;
 }
 
-#div7 {
+#div6 {
     position: absolute;
     top: 504px;
     left: 12px;
@@ -141,7 +141,7 @@ div.menuSi {
     height: 217px;
 }
 
-#div8 {
+#div7 {
     position: absolute;
     top: 504px;
     left: 246px;
@@ -149,7 +149,7 @@ div.menuSi {
     height: 217px;
 }
 
-#div9 {
+#div8 {
     position: absolute;
     top: 504px;
     left: 480px;
