@@ -9,7 +9,7 @@ var imgPeque = ["imagenes/OrdenadorDestruido.jpg", "imagenes/OrdenadorDestruido.
 var precios = [499, 399, 2000, 1500];
 var stock = [1, 1, 1, 1];
 var precioTransporte = [6, 12, 20, "gratis"];
-var IVA = 0.18;
+var IVA = 0.21;
 var uniUser;
 
 
