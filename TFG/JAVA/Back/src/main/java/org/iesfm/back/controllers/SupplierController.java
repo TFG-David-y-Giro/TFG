@@ -35,6 +35,9 @@ public class SupplierController {
         return supplierService.getSuppliers();
     }
 
+    @GetMapping("/supplier/names")
+    public List<String> getNames(){return supplierService.getSupplierNames();}
+
     @GetMapping("/supplier/{id}")
     public Supplier getSupplier(@PathVariable int id) {
             return supplierService.getSupplier(id);

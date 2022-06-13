@@ -21,6 +21,8 @@ public class SupplierService {
         return supplierRepository.findAll();
     }
 
+    public List<String> getSupplierNames() { return supplierRepository.getSuppliersNames();}
+
     public Supplier getSupplier(int id) {
         if (!supplierRepository.existsById(id)) {
             return null;

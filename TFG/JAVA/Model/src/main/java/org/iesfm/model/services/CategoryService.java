@@ -29,6 +29,10 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
+    public List<String> getCategoriesNames() {
+        return categoryRepository.getCategoryNames();
+    }
+
     public Category createCategory(Category category) {
         if (categoryRepository.existsById(category.getId())) {
             return null;
