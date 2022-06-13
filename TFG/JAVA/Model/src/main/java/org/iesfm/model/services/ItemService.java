@@ -73,7 +73,7 @@ public class ItemService {
     }
 
     public List<Item> getItemsBySupplier(String supplier) {
-        if (getItemsBySupplier(supplier).contains(supplier)) {
+        if (getSupplierNames().contains(supplier)) {
             return itemRepository.getItemsBySupplier(supplier);
         } else {
             return null;

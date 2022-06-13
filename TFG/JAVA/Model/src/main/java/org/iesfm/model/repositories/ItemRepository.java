@@ -20,7 +20,7 @@ public interface ItemRepository extends JpaRepository<Item, Integer> {
 
     @Query(
             nativeQuery = true,
-            value = "SELECT * FROM item WHERE supplier=:supplier"
+            value = "SELECT * FROM item i WHERE i.supplier=:supplier"
     )
     List<Item> getItemsBySupplier(@Param("supplier") String supplier);
 

@@ -26,8 +26,10 @@ public class CategoryController {
         if (categoryService.createCategory(newCategory) == null) {
             categoryService.createCategory(newCategory);
             return newCategory;
+        } else if (categoryService.getCategoriesNames().contains(newCategory.getName())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ya existía el nombre");
         } else {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existía");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existía el id");
         }
     }
 
