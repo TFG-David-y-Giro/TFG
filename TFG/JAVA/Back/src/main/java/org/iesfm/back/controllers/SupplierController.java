@@ -38,6 +38,11 @@ public class SupplierController {
     @GetMapping("/supplier/names")
     public List<String> getNames(){return supplierService.getSupplierNames();}
 
+    @GetMapping(value ="/supplier", params = "country")
+    public List<Supplier> getSuppliersByCountry(@RequestParam ("country") String country) {
+        return  supplierService.getSupplierByCountry(country);
+    }
+
     @GetMapping("/supplier/{id}")
     public Supplier getSupplier(@PathVariable int id) {
             return supplierService.getSupplier(id);

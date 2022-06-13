@@ -30,6 +30,9 @@ public class SupplierService {
             return supplierRepository.findById(id).get();
         }
     }
+    public List<Supplier> getSupplierByCountry(String country) {
+        return supplierRepository.getSuppliersByCountry(country);
+    }
 
     public Supplier createSupplier(Supplier newSupplier) {
         if (supplierRepository.existsById(newSupplier.getId())) {
