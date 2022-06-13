@@ -24,4 +24,10 @@ public interface ItemRepository extends JpaRepository<Item, Integer> {
     )
     List<Item> getItemsBySupplier(@Param("supplier") String supplier);
 
+    @Query(
+            nativeQuery = true,
+            value = "SELECT * FROM item WHERE name LIKE %:name%"
+    )
+    List<Item> getItemsByWord(@Param("name") String word);
+
 }

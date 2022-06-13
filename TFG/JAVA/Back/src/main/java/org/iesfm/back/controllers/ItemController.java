@@ -61,6 +61,11 @@ public class ItemController {
         }
     }
 
+    @GetMapping(value ="/item", params = "word")
+    public List<Item> getItemsByWord(@RequestParam(value = "word") String word) {
+        return itemService.getItemsByWord(word);
+    }
+
     @PutMapping("/item/{id}")
     public Item putItem(@PathVariable int id, @RequestBody Item itemUpdated) {
         return itemService.putItem(id, itemUpdated);

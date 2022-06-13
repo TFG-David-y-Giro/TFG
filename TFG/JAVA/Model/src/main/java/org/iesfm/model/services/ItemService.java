@@ -75,6 +75,9 @@ public class ItemService {
     public List<Item> getItemsBySupplier(String supplier) {
             return itemRepository.getItemsBySupplier(supplier);
     }
+    public List<Item> getItemsByWord(String word) {
+        return itemRepository.getItemsByWord(word);
+    }
 
     public Item getItem(int id) {
         if (itemRepository.existsById(id)) {
