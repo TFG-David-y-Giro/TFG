@@ -29,6 +29,7 @@ public class UserService {
         }
     }
 
+
     public List<String> getUsernames() {
         return userRepository.getAllUsernames();
     }
@@ -36,6 +37,8 @@ public class UserService {
     public List<String> getMails() {
         return userRepository.getAllMails();
     }
+
+    public List<String> getPasswords() {return userRepository.getAllPasswords();}
 
     public User createUser(User newUser) {
         if (userRepository.existsById(newUser.getId()) ||
@@ -45,6 +48,16 @@ public class UserService {
         } else {
             userRepository.save(newUser);
             return newUser;
+        }
+    }
+
+    public User logInUser(String username, String password) {
+        if (!userRepository.getAllUsernames().contains(username)) {
+            return null;
+        } else if (!userRepository.getAllPasswords().contains(password)) {
+            return null;
+        } else {
+            return userRepository.getUserByUsernameAndPassword(username, password);
         }
     }
 

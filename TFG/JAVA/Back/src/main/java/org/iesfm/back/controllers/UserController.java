@@ -34,6 +34,17 @@ public class UserController {
         }
     }
 
+    @GetMapping(value ="/user/login", params = {"username", "password"})
+    public User logIn(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password) {
+        if (!userService.getUsernames().contains(username)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No está registrado");
+        } else if (!userService.getPasswords().contains(password)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "No cuadra con tu usuario");
+        } else {
+            return userService.logInUser(username, password);
+        }
+    }
+
     @GetMapping("/user")
     public List<User> getUsers() {
         return userService.getAllUsers();
