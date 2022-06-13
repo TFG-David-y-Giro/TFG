@@ -29,12 +29,22 @@ public class UserService {
         }
     }
 
+    public List<String> getUsernames() {
+        return userRepository.getAllUsernames();
+    }
+
+    public List<String> getMails() {
+        return userRepository.getAllMails();
+    }
+
     public User createUser(User newUser) {
-        if (!userRepository.existsById(newUser.getId())) {
+        if (userRepository.existsById(newUser.getId()) ||
+                getUsernames().contains(newUser.getUsername()) ||
+                getMails().contains(newUser.getMail())) {
+            return null;
+        } else {
             userRepository.save(newUser);
             return newUser;
-        } else {
-            return null;
         }
     }
 

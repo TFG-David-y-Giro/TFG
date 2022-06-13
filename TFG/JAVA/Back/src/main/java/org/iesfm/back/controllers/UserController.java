@@ -22,11 +22,15 @@ public class UserController {
     @PostMapping("/user")
     @ResponseStatus(HttpStatus.CREATED)
     public User postUser(@RequestBody User newUser)  {
-        if (userService.getUser(newUser.getId()) == null) {
+        if (userService.getUser(newUser.getId()) != null) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existía el id");
+        } else if (userService.getUsernames().contains(newUser.getUsername())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ya existía el nombre de usuario");
+        } else if (userService.getMails().contains(newUser.getMail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existía el mail");
+        } else {
             userService.createUser(newUser);
             return newUser;
-        } else {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existía");
         }
     }
 
