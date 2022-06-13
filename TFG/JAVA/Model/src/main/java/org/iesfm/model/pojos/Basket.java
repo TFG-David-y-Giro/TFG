@@ -10,6 +10,10 @@ public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @JoinColumn(name = "username",
+            referencedColumnName = "username",
+            insertable = false,
+            updatable = false)
     private String username;
     private int price;
 
