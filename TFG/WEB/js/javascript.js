@@ -1,17 +1,47 @@
-//	Hacer tienda online de informatica usando: HTML, CSS, JS
-//	En el codigo javascript hay que hacer la base de datos de los productos con un vector por ejemplo...
+﻿//	Hacer tienda online de informatica usando: HTML, CSS, JS
+//	En el codigo javascript hay que hacer la base de datos de los productos con un vector 
+let respuesta = "";
+const id = [];
+const productos = [];
+const precios = [];
+const stock = [];
+function getItems() {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
 
+        respuesta = JSON.parse(this.responseText);
+        console.log(respuesta)
+        for (let i = 0; i < respuesta.length; i++) {
+            id.push(respuesta[i].id)
+            productos.push(respuesta[i].name)
+            precios.push(respuesta[i].price)
+            stock.push(respuesta[i].quantity)
+        }
+        //Creo variable y asocio al html
+        var PRINC = document.getElementsByName("PRINC");
+        PRINC[0].innerHTML = ''
+        //Bucle para crear divs en funcion de la cantidad que exista
+        for (let i = 0; i < respuesta.length; i++) {
+            PRINC[0].innerHTML += '<div id="div' + i + '" name="DIVS" class="productos"></div>';
+            var DIVSS = document.getElementsByName("DIVS");
+            DIVSS[i].innerHTML = '<a id="imgG' + i + '" ><img id="imgP' + 0 + i + '" class="imagen" src="' + imgPeque[i] + '"style="width:225px; height:230px;"></a><div class="etiquetas"><b><span id="pro' + i + '">' + productos[i] + '</span>: <span id="pre' + i + '">' + precios[i] + '€</span></b></div><div class="stock">Hay en stock <span id="uni' + i + '">' + stock[i] + '</span> unidades,<br/>¿Cuantas quiere?: <input class="uniBien" style="margin-bottom:40px"type="number" id="uniUser' + i + '" name="uniUser" value="0" size="4" /></div>';
+        }
 
-
+    }
+    xhttp.open("GET", "http://localhost:9090/item", true);
+    xhttp.send();
+}
 
 //BASE DE DATOS
-var productos = ["Antivirus", "Grafica", "Disco duro", "Ordenador", "Bolso portatil", "Portatil", "Memoria RAM", "Router Linux", "Sintonizadora TV"];
-var imgGrandes = ["img/productos/1.jpg", "img/productos/2.jpg", "img/productos/3.jpg", "img/productos/4.jpg", "img/productos/5.jpg", "img/productos/6.jpg", "img/productos/7.jpg", "img/productos/8.jpg", "img/productos/9.jpg"];
-var imgPeque = ["img/productos/1m.jpg", "img/productos/2m.jpg", "img/productos/3m.jpg", "img/productos/4m.jpg", "img/productos/5m.jpg", "img/productos/6m.jpg", "img/productos/7m.jpg", "img/productos/8m.jpg", "img/productos/9m.jpg"];
-var precios = [33, 169, 36, 360, 11, 540, 21, 66, 25];
-var stock = [5, 2, 8, 3, 10, 4, 3, 1, 2];
+//var productos = ["MSI i5 ", "Hummer i3", "RTX 3090", "RTX 3080"];
+
+var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+var imgPeque = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+//var precios = [499, 399, 2000, 1500];
+// var stock = [1, 1, 1, 1];
 var precioTransporte = [6, 12, 20, "gratis"];
-var IVA = 0.18;
+var IVA = 0.21;
 var uniUser;
 
 
@@ -19,13 +49,13 @@ var uniUser;
 //JAVASCRIPT A EJECUTARSE UNA VEZ CARGADA LA PAGINA:	
 window.onload = function () {
 
-
+    getItems();
     //Se cargan los productos dentro del HTML de forna dinamica haciendo uso de los datos de la base de datos, como si de un PHP se tratase:
-    var DIVS = document.getElementsByName("DIVS");
+    /* var DIVS = document.getElementsByName("DIVS");
     for (i in productos) {
         DIVS[i].innerHTML = '<a id="imgG' + i + '" href="' + imgGrandes[i] + '"><img id="imgP' + i + '" class="imagen" src="' + imgPeque[i] + '"></a><div class="etiquetas"><b><span id="pro' + i + '">' + productos[i] + '</span>: <span id="pre' + i + '">' + precios[i] + '€</span></b></div><div class="stock">Hay en stock <span id="uni' + i + '">' + stock[i] + '</span> unidades,<br/>¿Cuantas quiere?: <input class="uniBien" type="number" id="uniUser' + i + '" name="uniUser" value="0" size="4" /></div>';
     }
-
+ */
 
     //Rellena el campo dia y año, de la fecha de nacimiento y tarjeta de credito:
     //Mas info en: http://www.tallerwebmaster.com/tutorial/mostrar-fecha-actual-con-javascrip/58/
@@ -74,7 +104,7 @@ function validaLasUnidades(elEvento) {
     uniUser = document.getElementsByName("uniUser");
 
 
-    for (i in productos) {
+    for (let i = 0; i < respuesta.length; i++) {
 
         if (uniUser[i].value == "" || uniUser[i].value > stock[i] || uniUser[i].value < 0) {
 
@@ -126,7 +156,7 @@ function calculaElTotal(elEvento) {
 
 
     //Muestra el carrito de la compra
-    for (i in productos) {
+    for (let i = 0; i < respuesta.length; i++) {
 
         var tablaTotal = document.getElementById("tablaTotal").innerHTML;
         var preTotal = 0;

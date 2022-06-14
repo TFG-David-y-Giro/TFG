@@ -27,11 +27,12 @@ div.etiquetas {
 
 div.stock {
     padding-left: 0px;
+    text-align: center;
 }
 
 input.uniBien {
     position: relative;
-    margin-left: 45px;
+    /*margin-left: 45px;*/
 
 
     background: white;
@@ -57,7 +58,7 @@ div.divsSi {
     margin-right: auto;
     display: block;
     width: 1000px;
-    background: #999 url("../img/otros/plantilla.jpg") no-repeat;
+    background: #fff url("../img/otros/plantilla.jpg") no-repeat;
 }
 
 div.todoNo {
@@ -85,10 +86,18 @@ div.menuSi {
 }
 
 /*Divs para colocar cada producto en su sitio*/
-#div1 {
+#div0 {
     position: absolute;
     top: 38px;
     left: 12px;
+    width: 221px;
+    height: 217px;
+}
+
+#div1 {
+    position: absolute;
+    top: 38px;
+    left: 246px;
     width: 221px;
     height: 217px;
 }
@@ -96,44 +105,36 @@ div.menuSi {
 #div2 {
     position: absolute;
     top: 38px;
-    left: 246px;
+    left: 480px;
     width: 221px;
     height: 217px;
 }
 
 #div3 {
     position: absolute;
-    top: 38px;
-    left: 480px;
+    top: 365px;
+    left: 12px;
     width: 221px;
     height: 217px;
 }
 
 #div4 {
     position: absolute;
-    top: 271px;
-    left: 12px;
+    top: 365px;
+    left: 246px;
     width: 221px;
     height: 217px;
 }
 
 #div5 {
     position: absolute;
-    top: 271px;
-    left: 246px;
-    width: 221px;
-    height: 217px;
-}
-
-#div6 {
-    position: absolute;
-    top: 271px;
+    top: 365px;
     left: 480px;
     width: 221px;
     height: 217px;
 }
 
-#div7 {
+#div6 {
     position: absolute;
     top: 504px;
     left: 12px;
@@ -141,17 +142,17 @@ div.menuSi {
     height: 217px;
 }
 
-#div8 {
+#div7 {
     position: absolute;
-    top: 504px;
+    top: 692px;
     left: 246px;
     width: 221px;
     height: 217px;
 }
 
-#div9 {
+#div8 {
     position: absolute;
-    top: 504px;
+    top: 692px;
     left: 480px;
     width: 221px;
     height: 217px;
@@ -234,7 +235,7 @@ div.divZonaCompraNo {
 }
 
 #divPago {
-    height: 150px;
+    height: 225px;
     padding-left: 10px;
     background: #378582;
 }
@@ -256,13 +257,14 @@ div.divZonaCompraNo {
 #divDatosPersonales2 {
     position: relative;
     top: -130px;
-    left: 260px;
+    left: 340px;
     width: 200px;
     height: 130px;
 }
 
 #divDomicilio {
     padding: 0px 0px 0px 10px;
+
 }
 
 
@@ -314,12 +316,3 @@ input.logoTarjetas {
 }
 
 
-
-/*Pie de pagina	*/
-p.pie {
-    text-align: center;
-}
-
-a:link {
-    color: white;
-}
