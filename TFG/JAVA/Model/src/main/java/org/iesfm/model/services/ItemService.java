@@ -37,7 +37,7 @@ public class ItemService {
             categoryRepository.save(category);
             itemRepository.save(newItem);
             return newItem;
-        } else if (supplierRepository.findByName(newItem.getSupplier()) == null) {
+        } else if (!getSupplierNames().contains(newItem.getSupplier())) {
             return postItemAndSupplier(newItem, "Alemania");
         } else {
             itemRepository.save(newItem);
