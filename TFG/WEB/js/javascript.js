@@ -8,6 +8,8 @@ const stock = [];
 function getItems() {
     var xhttp;
     xhttp = new XMLHttpRequest();
+    var filter_word = document.getElementById("filter_word").value;
+    var button = document.getElementById("button_search");
     xhttp.onreadystatechange = function () {
 
         respuesta = JSON.parse(this.responseText);
@@ -29,15 +31,15 @@ function getItems() {
         }
 
     }
-    xhttp.open("GET", "http://localhost:9090/item", true);
+    xhttp.open("GET", "http://localhost:9090/item/?word="+filter_word, true);
     xhttp.send();
 }
 
 //BASE DE DATOS
 //var productos = ["MSI i5 ", "Hummer i3", "RTX 3090", "RTX 3080"];
 
-var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
-var imgPeque = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg","../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+var imgPeque = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg", "../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
 //var precios = [499, 399, 2000, 1500];
 // var stock = [1, 1, 1, 1];
 var precioTransporte = [6, 12, 20, "gratis"];
@@ -93,7 +95,7 @@ window.onload = function () {
 
 
 /*-------------------COMIENZAN LAS FUNCIONES-------------------*/
-document.querySelector('#button_search').addEventListener("click", filterItems);
+document.getElementById("button_search").onclick = filterItems;
 
 
 
@@ -512,15 +514,22 @@ function validaDatosPago(elEvento) {
     }
 }
 
-function filterItems() {
+/* function filterItems() {
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         var filter_word = document.querySelector('#filter_word').value;
         console.log(filter_word)
     }
-    xhttp.open("GET", "http://localhost:9090/item/?word="+filter_word+"", true);
+    xhttp.open("GET", "http://localhost:9090/item/?word="+filter_word, true);
     xhttp.send();
+} */
+function filterByWord() {
+    var filter_word = document.getElementById("filter_word").value;
+    var button = document.getElementById("button_search");
+    
+    button.onclick()
+
 }
 
 //FUNCION DE VALIDAR DATOS PAGO y ENVIAR DATOS
