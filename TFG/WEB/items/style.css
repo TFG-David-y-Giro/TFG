@@ -39,7 +39,7 @@ input.uniBien {
 }
 
 input.uniMal {
-    margin-left: 52px;
+    /*margin-left: 52px;*/
     background: red;
 }
 
@@ -58,7 +58,7 @@ div.divsSi {
     margin-right: auto;
     display: block;
     width: 1000px;
-    background: #fff url("../img/otros/plantilla.jpg") no-repeat;
+    background: #fff;
 }
 
 div.todoNo {

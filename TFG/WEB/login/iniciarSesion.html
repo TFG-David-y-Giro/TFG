@@ -11,19 +11,7 @@
     <script src="https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lf8KaYfAAAAAK0RaH6Ra_2QVDMnuijFiYZEEp_N"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-      grecaptcha.ready(function () {
-        grecaptcha
-          .execute("6Lf8KaYfAAAAAK0RaH6Ra_2QVDMnuijFiYZEEp_N", {
-            action: "formulario",
-          })
-          .then(function (token) {
-            var recaptchaResponse =
-              document.getElementById("recaptchaResponse");
-            recaptchaResponse.value = token;
-          });
-      });
-    </script>
+
     <link rel="stylesheet" href="assets/css/estilos.css" />
   </head>
   <body>
@@ -47,18 +35,24 @@
           <!--Login-->
           <form action="" class="formulario__login">
             <h2>Iniciar Sesión</h2>
-            <input type="text" placeholder="Usuario" />
-            <input type="password" placeholder="Contraseña" />
-            <button>Entrar</button>
+            <input type="text" placeholder="Usuario" id="usuario_login" />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              id="contraseña_login"
+            />
+            <input type="button" value="Iniciar Sesion" id="boton_login"></input>
           </form>
 
           <!--Register-->
           <form action="" class="formulario__register">
             <h2>Regístrarse</h2>
-            <input type="text" placeholder="Nombre completo" />
-            <input type="text" placeholder="Correo Electronico" />
             <input type="text" placeholder="Usuario" />
+            <input type="text" placeholder="Nombre" />
+            <input type="text" placeholder="Apellido" />
+            <input type="text" placeholder="Mail" />
             <input type="password" placeholder="Contraseña" />
+            <input type="password" placeholder="Repite la contraseña" />
             <button>Regístrarse</button>
           </form>
         </div>
