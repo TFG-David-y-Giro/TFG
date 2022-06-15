@@ -93,11 +93,11 @@ window.onload = function () {
 
 
 /*-------------------COMIENZAN LAS FUNCIONES-------------------*/
+document.querySelector('#button_search').addEventListener("click", filterItems);
 
 
 
-
-//FUNCION DE VALIDACION DE UNIDADES:
+//FUNCION DE VALIDACION DE UNIDADES
 function validaLasUnidades(elEvento) {
 
     var todoBien = true;
@@ -512,8 +512,16 @@ function validaDatosPago(elEvento) {
     }
 }
 
-
-
+function filterItems() {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        var filter_word = document.querySelector('#filter_word').value;
+        console.log(filter_word)
+    }
+    xhttp.open("GET", "http://localhost:9090/item/?word="+filter_word+"", true);
+    xhttp.send();
+}
 
 //FUNCION DE VALIDAR DATOS PAGO y ENVIAR DATOS
 function validaDatosPagoYEnviaCarro(elEvento) {

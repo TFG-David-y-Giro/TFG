@@ -100,10 +100,10 @@ VALUES ('RTX 3080', 1500, 'Tarjetas graficas', 'Nvidia', 1);
 
 CREATE TABLE IF NOT EXISTS cart (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user VARCHAR (100) NOT NULL,
+  username VARCHAR (100) NOT NULL,
   price INT NOT NULL,
   INDEX (id),
-  CONSTRAINT FK_cart_user FOREIGN KEY (user) REFERENCES user (username) ON UPDATE CASCADE ON DELETE CASCADE
+  CONSTRAINT FK_cart_user FOREIGN KEY (username) REFERENCES user (username) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO PcShopMD.cart (user, price)
