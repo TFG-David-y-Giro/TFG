@@ -3,6 +3,7 @@ window.onload = function () {
     getUsers();
 }
 document.querySelector('#boton_login').addEventListener("click", validarCredenciales);
+document.querySelector('#button_register').addEventListener("click", postUser);
 document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
 document.getElementById("btn__registrarse").addEventListener("click", register);
 window.addEventListener("resize", anchoPage);
@@ -62,9 +63,9 @@ function validarCredenciales() {
         if (nombre_usuario_html == nombre_usuario[i] && contraseña_html == password[i]) {
             bAcceso = true;
             alert("Bienvenido " + nombre_usuario_html);
-            
+
             localStorage.setItem('usuario', nombre_usuario_html);
-            window.location.href = "/index.html";
+            window.location.href = "../alreadyLogin/index_copy.html";
             /* "http://localhost:9090/user/login?username="+nombre_usuario_html+"&password="+contraseña_html; */
         }
         console.log(respuesta[i][1]);
@@ -91,6 +92,53 @@ function validarCredenciales() {
     }
 
 } */
+function postUser() {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    var username_post = document.querySelector('#post_username').value;
+    var name_post = document.querySelector('#post_name').value;
+    var surname_post = document.querySelector('#post_surname').value;
+    var mail_post = document.querySelector('#post_mail').value;
+    var password_post = document.querySelector('#post_password').value;
+    var passwordTrueFalse = document.querySelector('#passTrueFalse').value;
+    var todoBien = false;
+    console.log(username_post);
+    console.log(name_post);
+    console.log(surname_post);
+    console.log(mail_post);
+    console.log(password_post);
+    const Url = 'http://localhost:9090/user';
+    const user = {
+        username: username_post,
+        name: name_post,
+        surname: surname_post,
+        mail: mail_post,
+        password: password_post
+    }
+    /* for (var i = 0; i < respuesta.length; i++) {
+        if (respuesta[i].username == username ||
+            respuesta[i].mail == mail ||
+            password != passwordTrueFalse) {
+            return todoBien;
+            console.log(username_post);
+            console.log(name_post);
+            console.log(surname_post);
+            console.log(mail_post);
+            console.log(password_post);
+        } else { */
+    $('.button_register').click(function () {
+        $post(Url, user, function (user, status) {
+            console.log('${data} and status is &{status}')
+        })
+    })
+    /* return todoBien = true;
+    console.log(username_post);
+    console.log(name_post);
+    console.log(surname_post);
+    console.log(mail_post);
+    console.log(password_post); */
+}
+
 
 
 function anchoPage() {

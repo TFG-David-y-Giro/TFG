@@ -1,17 +1,17 @@
 ﻿//	Hacer tienda online de informatica usando: HTML, CSS, JS
 //	En el codigo javascript hay que hacer la base de datos de los productos con un vector 
 let respuesta = "";
+let respuestaByWord = "";
 const id = [];
 const productos = [];
 const precios = [];
 const stock = [];
+const url_itemByWord = "http://localhost:9090/item/?word=";
 function getItems() {
     var xhttp;
     xhttp = new XMLHttpRequest();
-    var filter_word = document.getElementById("filter_word").value;
-    var button = document.getElementById("button_search");
+    /* var filter_word = document.querySelector('#filter_word').value; */
     xhttp.onreadystatechange = function () {
-
         respuesta = JSON.parse(this.responseText);
         console.log(respuesta)
         for (let i = 0; i < respuesta.length; i++) {
@@ -29,16 +29,83 @@ function getItems() {
             var DIVSS = document.getElementsByName("DIVS");
             DIVSS[i].innerHTML = '<a id="imgG' + i + '" ><img id="imgP' + 0 + i + '" class="imagen" src="' + imgPeque[i] + '"style="width:225px; height:230px;"></a><div class="etiquetas"><b><span id="pro' + i + '">' + productos[i] + '</span>: <span id="pre' + i + '">' + precios[i] + '€</span></b></div><div class="stock">Hay en stock <span id="uni' + i + '">' + stock[i] + '</span> unidades,<br/>¿Cuantas quiere?: <input class="uniBien" style="margin-bottom:40px"type="number" id="uniUser' + i + '" name="uniUser" value="0" size="4" /></div>';
         }
-
     }
-    xhttp.open("GET", "http://localhost:9090/item/?word="+filter_word, true);
+    xhttp.open("GET", url_itemByWord/* +filter_word */, true);
     xhttp.send();
+}
+
+function getItemsByWord() {
+    
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    var filter_word = document.querySelector('#filter_word').value;
+    xhttp.open("GET", url_itemByWord + filter_word, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4) {
+            if (xhttp.status == 200) {
+                respuestaByWord = JSON.parse(xhttp.responseText);
+                /* for (let i = 0; i < respuestaByWord.length; i++) {
+                    id.push(respuestaByWord[i].id)
+                    productos.push(respuestaByWord[i].name)
+                    precios.push(respuestaByWord[i].price)
+                    stock.push(respuestaByWord[i].quantity)
+                } */
+                //Creo variable y asocio al html
+                //document.getElementById("PRINC").style.display = "none";
+                var SECUNDARY = document.getElementById("SECUNDARY");
+                SECUNDARY.innerHTML = ''
+
+
+                //Bucle para crear divs en funcion de la cantidad que exista
+                for (let i = 0; i < respuestaByWord.length; i++) {
+                    console.log(respuestaByWord)
+                    SECUNDARY.innerHTML += '<div id="div' + i + '" name="DIVSS" class="productos">' + respuestaByWord[i].price + '</div>';
+
+                    var DIVSS = document.getElementsByName("DIVSS");
+                    DIVSS[i].innerHTML = '<a id="imgG' + i + '" ><img id="imgP' + 0 + i + '" class="imagen" src="'
+                        + imgPeque[respuestaByWord[i].id-1] + '"style="width:225px; height:230px;"></a><div class="etiquetas"><b><span id="pro'
+                        + i + '">' + respuestaByWord[i].name + '</span>: <span id="pre' + i + '">' + respuestaByWord[i].price
+                        + '€</span></b></div><div class="stock">Hay en stock <span id="uni' + i + '">'
+                        + respuestaByWord[i].quantity + '</span> unidades,<br/>¿Cuantas quiere?: <input class="uniBien" style="margin-bottom:40px"type="number" id="uniUser'
+                        + i + '" name="uniUser" value="0" size="4" /></div>';
+
+                }
+                console.log(respuestaByWord);
+                console.log(filter_word);
+            }
+        }
+        document.getElementById("princ").style.display = "none";
+    }
+
+}
+
+function descargaArchivo() {
+    // Obtener la instancia del objeto XMLHttpRequest
+    peticion_http = new XMLHttpRequest();
+    // Preparar la funcion de respuesta
+    peticion_http.onreadystatechange = muestraContenido;
+    // Realizar peticion HTTP
+    peticion_http.open('GET', 'enlaces.txt', true);
+    peticion_http.send(null);
+    function muestraContenido() {
+        if (peticion_http.readyState == 4) {
+            if (peticion_http.status == 200) {
+                var arr = JSON.parse(peticion_http.responseText);
+                var out = "";
+                for (i = 0; i < arr.length; i++) {
+                    out += '<a href="' + arr[i].url + '">' + arr[i].display + '</a><br>';
+                }
+                document.getElementById("id1").innerHTML = out;
+            }
+        }
+    }
 }
 
 //BASE DE DATOS
 //var productos = ["MSI i5 ", "Hummer i3", "RTX 3090", "RTX 3080"];
 
-var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg","../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg", "../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
 var imgPeque = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg", "../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
 //var precios = [499, 399, 2000, 1500];
 // var stock = [1, 1, 1, 1];
@@ -89,13 +156,14 @@ window.onload = function () {
     document.getElementById("botonDatos").onclick = pideDatos;
     document.getElementById("botonPago").onclick = validaDatosPersonales;
     document.getElementById("botonConfirmar").onclick = validaDatosPago;
+    document.querySelector('#filter_word_button').addEventListener("click", getItemsByWord);
 }
 
 
 
 
 /*-------------------COMIENZAN LAS FUNCIONES-------------------*/
-document.getElementById("button_search").onclick = filterItems;
+
 
 
 
@@ -527,7 +595,7 @@ function validaDatosPago(elEvento) {
 function filterByWord() {
     var filter_word = document.getElementById("filter_word").value;
     var button = document.getElementById("button_search");
-    
+
     button.onclick()
 
 }
