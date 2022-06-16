@@ -22,6 +22,7 @@ const apellido = [];
 const mail = [];
 const password = [];
 
+
 //FUNCIONES
 function getUsers() {
     var xhttp;
@@ -115,6 +116,21 @@ function postUser() {
         mail: mail_post,
         password: password_post
     }
+
+    /* $('.button_register').click(function () {
+        $.post(Url, user, function (user, status) {
+            console.log('${data} and status is &{status}')
+        })
+    })
+
+    console.log(user); */
+    $.ajax({
+        type: "POST",
+        url: Url,
+        data: user,
+        success: true,
+        dataType: JSON
+    });
     /* for (var i = 0; i < respuesta.length; i++) {
         if (respuesta[i].username == username ||
             respuesta[i].mail == mail ||
@@ -126,11 +142,7 @@ function postUser() {
             console.log(mail_post);
             console.log(password_post);
         } else { */
-    $('.button_register').click(function () {
-        $post(Url, user, function (user, status) {
-            console.log('${data} and status is &{status}')
-        })
-    })
+
     /* return todoBien = true;
     console.log(username_post);
     console.log(name_post);
