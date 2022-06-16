@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
 
   <!--lee codigo javascript-->
+  <script type="text/javascript" src="../postItem.js"></script>
   <script type="text/javascript" src="../js/javascript.js"></script>
 
   <!--lee codigo css-->
@@ -39,22 +40,24 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Inicio</a>
+          <a class="nav-link" href="../index_copy.html">Inicio</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="">Productos<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/basket/cesta.html">🛒</a>
+          <a class="nav-link" href="../basket_copy/cesta.html">🛒</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login/iniciarSesion.html">Iniciar Sesion</a>
+          <a class="nav-link" href="../../index.html">Cerrar Sesion</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/alreadyLogin/postItem.html">Subir Objeto</a>
         </li>
       </ul>
       <form class="form-inline">
         <input class="form-control mr-sm-2"  id="filter_word" type="search" placeholder="Buscar..." aria-label="Search" />
         <input type="button" id="filter_word_button" value="🔎"></input>
-      </input>
       </form>
     </div>
   </nav>
@@ -81,7 +84,7 @@
       <!--Botones de compra-->
       <div id="divbotones">
         <input type="button" id="botonTotal" value="Calcular total" />
-        <input type="button" id="botonDatos" value="Datos personales" disabled="disabled" />
+        <!-- <input type="button" id="botonDatos" value="Datos personales" disabled="disabled" /> -->
         <input type="button" id="botonPago" value="Pago" disabled="disabled" />
         <input type="button" id="botonConfirmar" value="Confirmar pedido" disabled="disabled" />
       </div>
@@ -261,12 +264,12 @@
             <label><span id="alertTipoDeTarjeta">Tipo de tarjeta:</span></label><br />
             <label for="visa">
               <input type="radio" id="visa" name="tarjetas" class="logoTarjetas" value="Visa">
-              <img src="img/pago/visa.gif"></img>
+              <img src="../../imagenes/visa-logo.png" style="height:40px; width:40px;"></img>
             </label>
 
             <label for="masterCard">
               <input type="radio" id="masterCard" name="tarjetas" class="logoTarjetas" value="MasterCard">
-              <img src="img/pago/mastercard.gif"></img>
+              <img src="../../imagenes/logo-bizum-2.png" style="height:40px; width:30px;"></img>
             </label>
 
           </div>

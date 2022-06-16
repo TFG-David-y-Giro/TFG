@@ -22,6 +22,7 @@ const apellido = [];
 const mail = [];
 const password = [];
 
+
 //FUNCIONES
 function getUsers() {
     var xhttp;
@@ -100,13 +101,6 @@ function postUser() {
     var surname_post = document.querySelector('#post_surname').value;
     var mail_post = document.querySelector('#post_mail').value;
     var password_post = document.querySelector('#post_password').value;
-    var passwordTrueFalse = document.querySelector('#passTrueFalse').value;
-    var todoBien = false;
-    console.log(username_post);
-    console.log(name_post);
-    console.log(surname_post);
-    console.log(mail_post);
-    console.log(password_post);
     const Url = 'http://localhost:9090/user';
     const user = {
         username: username_post,
@@ -115,28 +109,27 @@ function postUser() {
         mail: mail_post,
         password: password_post
     }
-    /* for (var i = 0; i < respuesta.length; i++) {
-        if (respuesta[i].username == username ||
-            respuesta[i].mail == mail ||
-            password != passwordTrueFalse) {
-            return todoBien;
-            console.log(username_post);
-            console.log(name_post);
-            console.log(surname_post);
-            console.log(mail_post);
-            console.log(password_post);
-        } else { */
-    $('.button_register').click(function () {
-        $post(Url, user, function (user, status) {
-            console.log('${data} and status is &{status}')
-        })
-    })
-    /* return todoBien = true;
-    console.log(username_post);
-    console.log(name_post);
-    console.log(surname_post);
-    console.log(mail_post);
-    console.log(password_post); */
+    console.log(user);
+    $.ajax({
+        type : "POST",
+        contentType : "application/json",
+        dataType : 'json',
+        url : Url,
+        data : JSON.stringify(user),
+        timeout : 100000,
+        headers : {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+        },
+        success : function(data) {
+          console.log("SUCCESS: ", data);
+        },
+        error : function(e) {
+          console.log("ERROR: ", e);
+        },
+        done : function(e) {
+        }
+    });
 }
 
 

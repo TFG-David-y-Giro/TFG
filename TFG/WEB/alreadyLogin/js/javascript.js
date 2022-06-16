@@ -105,8 +105,8 @@ function descargaArchivo() {
 //BASE DE DATOS
 //var productos = ["MSI i5 ", "Hummer i3", "RTX 3090", "RTX 3080"];
 
-var imgGrandes = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg", "../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
-var imgPeque = ["../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg", "../imagenes/msi-i5.jpeg", "../imagenes/hummer-i3.jpeg", "../imagenes/rtx3090.jpeg", "../imagenes/rtx3080.jpeg"];
+var imgGrandes = ["../../imagenes/msi-i5.jpeg", "../../imagenes/hummer-i3.jpeg", "../../imagenes/rtx3090.jpeg", "../../imagenes/rtx3080.jpeg", "../../imagenes/msi-i5.jpeg", "../../imagenes/hummer-i3.jpeg", "../../imagenes/rtx3090.jpeg", "../../imagenes/rtx3080.jpeg"];
+var imgPeque = ["../../imagenes/msi-i5.jpeg", "../../imagenes/hummer-i3.jpeg", "../../imagenes/rtx3090.jpeg", "../../imagenes/rtx3080.jpeg", "../../imagenes/msi-i5.jpeg", "../../imagenes/hummer-i3.jpeg", "../../imagenes/rtx3090.jpeg", "../../imagenes/rtx3080.jpeg"];
 //var precios = [499, 399, 2000, 1500];
 // var stock = [1, 1, 1, 1];
 var precioTransporte = [6, 12, 20, "gratis"];
@@ -153,7 +153,7 @@ window.onload = function () {
 
     //Botones que llevaran a cabo la ejecucion de determinadas secuencias de codigo JavaScript:
     document.getElementById("botonTotal").onclick = validaLasUnidades;
-    document.getElementById("botonDatos").onclick = pideDatos;
+    //document.getElementById("botonDatos").onclick = pideDatos;
     document.getElementById("botonPago").onclick = validaDatosPersonales;
     document.getElementById("botonConfirmar").onclick = validaDatosPago;
     //document.getElementById("button_postItem").addEventListener("click", postItem);
@@ -248,7 +248,8 @@ function calculaElTotal(elEvento) {
 /**/			document.getElementById("divPago").className = "divsNo";
 
             //Habilita el boton de datos personales
-            document.getElementById("botonDatos").disabled = false;
+            document.getElementById("botonPago").disabled = false;
+           /*  document.getElementById("botonDatos").disabled = false; */
 
             //Calcula el totalUnidades y rellena el carro de la compra
             preTotal = precios[i] * uniUser[i].value;
@@ -477,7 +478,7 @@ function validaDatosPersonales(elEvento) {
 
 
     //Si no ha habido ni un solo error, se ejecuta la siguiente funcion que se encarga de mostrar el formulario de los datos personales:
-    if (todoBien) {
+    if (!todoBien) {
         pideDatosPago();
     }
     else {
